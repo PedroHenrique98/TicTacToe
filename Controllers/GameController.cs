@@ -38,7 +38,7 @@ namespace TicTacToe.Controllers
                 try
                 {
                     _boardController.DrawBoard();
-                    Console.WriteLine("Jogador {0:D}, sua vez! Informe o número da linha e coluna desejada para esta rodada. (Ex.: 1 1)", (int)playerTurn);
+                    Console.WriteLine("Jogador {0:D}, sua vez! Informe respectivamente o número da linha e coluna desejada para esta rodada. (Ex.: 1 1)", (int)playerTurn);
                     string? coordinatesInLine = Console.ReadLine();
                     string[] coordinatesString = String.IsNullOrEmpty(coordinatesInLine) ? new string[0] : coordinatesInLine.Split(" ");
                     int[] coordinates = coordinatesString.Select(int.Parse).ToArray();

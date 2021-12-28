@@ -26,8 +26,8 @@ namespace TicTacToe.Controllers
         /// </summary>
         public void DrawBoard()
         {
-            Console.WriteLine("============");
-            Console.WriteLine();
+            Console.WriteLine("L\\C   0   1   2");
+            Console.WriteLine("   * =========== * ");
             for (int i = 0; i < board.BoardGame.GetLength(1); i++)
             {
                 string[] line = new string[board.BoardGame.GetLength(0)];
@@ -35,12 +35,12 @@ namespace TicTacToe.Controllers
                 {
                     line[j] = board.BoardGame[i, j] != StateBoard.Void ? board.BoardGame[i, j].ToString() : " ";
                 }
-                Console.WriteLine(" {0} | {1} | {2}", line[0], line[1], line[2]);
+                Console.WriteLine("{0}  *  {1} | {2} | {3}  *", i, line[0], line[1], line[2]);
                 if (board.BoardGame.GetLength(1) != i + 1)
-                    Console.WriteLine("-----------");
+                    Console.WriteLine("   * ----------- *");
             }
-            Console.WriteLine();
-            Console.WriteLine("============");
+            Console.WriteLine("   * =========== * ");
+            Console.WriteLine("Legenda || L: Linha | C: Coluna ||");
         }
         #endregion
 
