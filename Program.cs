@@ -1,4 +1,10 @@
-﻿using TicTacToe.Controllers;
+﻿/*
+// Author: Pedro Henrique Eugenio de Medeiros
+// Email: pedro.medeiros.001@acad.pucrs.br
+// Program: TicTacToe Game
+// Version: 1.0
+*/
+using TicTacToe.Controllers;
 using TicTacToe.Enums;
 
 namespace TicTacToe
@@ -7,10 +13,12 @@ namespace TicTacToe
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Start Project!");
-
+            Console.WriteLine("Bem vindo ao TicTacToe 2000! O jogo já irá começar......");
+            //Instanciando controller da partida
             GameController g1 = new GameController();
+            //Buscando resultado da partida
             StateBoard winner = g1.getWinner();
+            //Exibindo resultado da partida
             if(winner == StateBoard.Void)
                 Console.WriteLine("Vish, deu velha!");
             else
