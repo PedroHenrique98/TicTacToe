@@ -11,7 +11,10 @@ namespace TicTacToe
 
             GameController g1 = new GameController();
             StateBoard winner = g1.getWinner();
-            Console.WriteLine("Parabéns jogador {0}, você ganhou!!!", (int)winner);
+            if(winner == StateBoard.Void)
+                Console.WriteLine("Vish, deu velha!");
+            else
+                Console.WriteLine("Parabéns jogador {0}, você ganhou!!!", (int)winner);
         }
     }
 }

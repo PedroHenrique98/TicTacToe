@@ -9,8 +9,6 @@ namespace TicTacToe.Controllers
         public BoardController()
         {
             board = new Board();
-            board.BoardGame = new StateBoard[3,3];
-            board.TurnsPlayed = 0;
             for (int i = 0; i < board.BoardGame.GetLength(0); i++)
             {
                 for (int j = 0; j < board.BoardGame.GetLength(1); j++)

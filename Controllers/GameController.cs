@@ -24,8 +24,8 @@ namespace TicTacToe.Controllers
                 {
                     _boardController.DrawBoard();
                     Console.WriteLine("Jogador {0:D}, sua vez! Informe o número da linha e coluna desejada para esta rodada. (Ex.: 1 1)", (int)playerTurn);
-                    string coordinatesInLine = Console.ReadLine();
-                    string[] coordinatesString = coordinatesInLine.Split(" ");
+                    string? coordinatesInLine = Console.ReadLine();
+                    string[] coordinatesString = String.IsNullOrEmpty(coordinatesInLine) ? new string[0] : coordinatesInLine.Split(" ");
                     int[] coordinates = coordinatesString.Select(int.Parse).ToArray();
 
                     if(PlayTurn(playerTurn, coordinates[0], coordinates[1]))
@@ -62,6 +62,10 @@ namespace TicTacToe.Controllers
         }
         public StateBoard getWinner()
         {
+            if(_boardController.VerifySquaresFull())
+            {
+                return StateBoard.Void;
+            }
             return playerTurn;
         }
         #endregion

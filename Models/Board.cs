@@ -6,6 +6,10 @@ namespace TicTacToe.Models
     {
         public StateBoard[,] BoardGame {get;set;}
         public int TurnsPlayed {get;set;}
-
+        public Board()
+        {
+            BoardGame = new StateBoard[3,3];
+            TurnsPlayed = 0;
+        }
     }
 }
